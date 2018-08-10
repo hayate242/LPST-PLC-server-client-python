@@ -10,11 +10,19 @@ server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 server.bind(address)
 server.listen(5)
 
-client, addr = server.accept()
-data = client.recv(max_size)
+try:
+    while True:
+        client, addr = server.accept()
+        data = client.recv(max_size)
 
-print('At', datetime.now(), client, 'said', data)
-client.sendall(b'Are you talking to me?')
-client.close()
-# server.close()
+        print('At', datetime.now(), client, 'said', data)
+        if data == b'500000FE03FF00000006001004010000':
+            client.sendall(b'measured data')
+        else:
+            client.sendall(b'invailed data')
+        client.close()
+except KeyboardInterrupt:
+    print("server closing")
+    client.close()
+    server.close()
 

@@ -3,8 +3,9 @@ services:
   web:
     build: ./server/
     ports:
-     - "5000:5000"
+     - "6666:6666"
     volumes:
      - ./server/python:/code
+    tty: true
   redis:
     image: "redis:alpine"
