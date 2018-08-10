@@ -3,7 +3,7 @@ services:
   web:
     build: ./server/
     ports:
-     - "6666:6666"
+     - "5000:5000"
     volumes:
      - ./server/python:/code
     tty: true
