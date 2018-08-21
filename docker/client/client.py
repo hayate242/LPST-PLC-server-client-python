@@ -26,7 +26,7 @@ class Client:
         client.close()
 
 if __name__ == "__main__":
-    client = Client('localhost', 5000, 1000)
+    client = Client('localhost', 5555, 1000)
 
     # 3Eフレーム　ASCIIコード
     cmd = ''

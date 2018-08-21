@@ -1,11 +1,12 @@
 from datetime import datetime
 import socket
 
-address = ('localhost', 5000)
+#address = ('localhost', 5000)
+address = ('192.168.29.164', 5555)
 max_size = 1000
 
 print('Starting the server at', datetime.now())
-print('Waiting for a client to call.')
+print('Waiting for a client to call. at ', address)
 server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 server.bind(address)
 server.listen(5)
